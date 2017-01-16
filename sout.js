@@ -20,29 +20,41 @@ function devices(table) {
 	});
 }
 
+function error(err) {
+	return JSON.stringify({
+		items: [{
+			title: err.toString()
+		}]
+	});
+}
+
 function run(argv) {
 	const deviceIndex = argv.length > 0 ? parseInt(argv[0], 10) : -1;
 	const prefName = 'System Preferences';
 
-	Application(prefName)
-		.panes()
-		.filter(pane => pane.id().includes('.sound'))[0]
-		.anchors()
-		.filter(anchor => anchor.name() === 'output')[0]
-		.reveal();
+	try {
+		Application(prefName)
+			.panes()
+			.filter(pane => pane.id().includes('.sound'))[0]
+			.anchors()
+			.filter(anchor => anchor.name() === 'output')[0]
+			.reveal();
 
-	delay(0.5);
+		delay(0.5);
 
-	const se = Application('System Events');
-	const p = se.processes[prefName];
-	const table = p.windows[0].tabGroups[0].scrollAreas[0].tables[0];
+		const se = Application('System Events');
+		const p = se.processes[prefName];
+		const table = p.windows[0].tabGroups[0].scrollAreas[0].tables[0];
 
-	if (deviceIndex < 0) {
-		// show devices
-		return devices(table);
+		if (deviceIndex < 0) {
+			// show devices
+			return devices(table);
+		}
+
+		// select a device
+		table.rows[deviceIndex].select();
+	} catch (err) {
+		return error(err);
 	}
-
-	// select a device
-	table.rows[deviceIndex].select();
 }
 
