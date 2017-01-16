@@ -21,7 +21,9 @@
     "index.js",
     "icon.png",
     "info.plist",
-    "sout.js"
+    "sout.js",
+    "sound.png",
+    "no-sound.png"
   ],
   "keywords": [
     "alfred",
