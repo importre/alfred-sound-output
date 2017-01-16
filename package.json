@@ -1,6 +1,6 @@
 {
   "name": "alfred-sound-output",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Select a device for sound output",
   "license": "MIT",
   "repository": "importre/alfred-sound-output",
