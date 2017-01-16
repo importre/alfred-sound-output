@@ -16,7 +16,17 @@ $ npm install -g alfred-sound-output
 
 In Alfred, type `sout` and select a device for sound output.
 
-![screen shot 2017-01-16 at 8 34 54 pm](https://cloud.githubusercontent.com/assets/1744446/21981548/559451fc-dc2b-11e6-9348-d1256d56f1f9.png)
+![](https://cloud.githubusercontent.com/assets/1744446/21987273/35300e0e-dc46-11e6-96b4-efb181166afe.png)
+
+### Troubleshooting
+
+If you got the error,
+
+![](https://cloud.githubusercontent.com/assets/1744446/21987275/3685ecc4-dc46-11e6-8e3e-a48a6a5de5b8.png)
+
+you must allow Alfred 3 to control your computer
+
+![](https://cloud.githubusercontent.com/assets/1744446/21987303/583a4a7c-dc46-11e6-8523-dbd76fa4b71c.png)
 
 
 ## License
